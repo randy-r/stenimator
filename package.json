@@ -1,7 +1,7 @@
 {
   "name": "stenimator",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Animator for Stencil",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -12,11 +12,19 @@
   "unpkg": "dist/stenimator/stenimator.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/randy-r/stedux.git"
   },
   "files": [
     "dist/",
     "loader/"
+  ],
+  "keywords": [
+    "stencil",
+    "stenciljs",
+    "animate",
+    "page",
+    "animations",
+    "transitions"
   ],
   "scripts": {
     "build": "rm -fR ./dist && stencil build --docs",
@@ -34,5 +42,10 @@
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0"
   },
-  "license": "MIT"
+  "author": "randy-r",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/randy-r/stedux/issues"
+  },
+  "homepage": "https://randy-r.github.io/stedux/"
 }
