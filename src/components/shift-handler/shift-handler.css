@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  --stenimator-x: 100%;
+  --stenimator-x-n: calc(0px - 100%);
+  --stenimator-duration: 500ms;
+  --stenimator-func: ease-in-out;
+}
+
+.enter-right-left {
+  animation-duration: var(--stenimator-duration);
+  animation-timing-function: var(--stenimator-func);
+  animation-name: enter-right-left;
+}
+
+.exit-right-left {
+  animation-duration: var(--stenimator-duration);
+  animation-timing-function: var(--stenimator-func);
+  animation-name: exit-right-left;
+}
+
+@keyframes enter-right-left {
+  from {
+    opacity: 0;
+    transform: translateX(var(--stenimator-x));
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-right-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--stenimator-x-n));
+    opacity: 0;
+  }
+}

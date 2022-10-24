@@ -5,57 +5,48 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { CxOrderProps, CxProps } from "./types/types";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface ShiftHandler {
+        "criteria": any;
+        "enter": CxProps['enter'];
+        "enterReverse": CxProps['enterReverse'];
+        "exit": CxProps['exit'];
+        "exitReverse": CxProps['exitReverse'];
+        "getChildConfig": () => CxOrderProps;
+        "getJsx": () => any;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLShiftHandlerElement extends Components.ShiftHandler, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLShiftHandlerElement: {
+        prototype: HTMLShiftHandlerElement;
+        new (): HTMLShiftHandlerElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "shift-handler": HTMLShiftHandlerElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface ShiftHandler {
+        "criteria": any;
+        "enter": CxProps['enter'];
+        "enterReverse"?: CxProps['enterReverse'];
+        "exit": CxProps['exit'];
+        "exitReverse"?: CxProps['exitReverse'];
+        "getChildConfig": () => CxOrderProps;
+        "getJsx": () => any;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "shift-handler": ShiftHandler;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "shift-handler": LocalJSX.ShiftHandler & JSXBase.HTMLAttributes<HTMLShiftHandlerElement>;
         }
     }
 }
