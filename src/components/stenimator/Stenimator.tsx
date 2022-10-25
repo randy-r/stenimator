@@ -1,13 +1,10 @@
 import { FunctionalComponent, Fragment, h, Build } from '@stencil/core';
-import { CxOrderProps, StenimatorProps } from '../types/types';
+import { CxOrderProps, StenimatorProps } from '../../types/types';
 
-const defaultEnter = 'enter-right-left';
-const defaultExit = 'exit-right-left';
-
-export const FunctionalGrabber: FunctionalComponent<StenimatorProps> = (props, children, utils) => {
+export const Stenimator: FunctionalComponent<StenimatorProps> = (props, children, utils) => {
   const { criteria, enter: givenEnter, enterReverse, exit: givenExit, exitReverse, class: cx, key } = props;
-  const enter = givenEnter ?? defaultEnter;
-  const exit = givenExit ?? defaultExit;
+  const enter = givenEnter;
+  const exit = givenExit;
   if (!children?.length || children.length > 1) {
     throw new Error(
       `This component support one child only. Number of children components passed "${children?.length}".`,
@@ -18,6 +15,7 @@ export const FunctionalGrabber: FunctionalComponent<StenimatorProps> = (props, c
       <shift-handler
         data-prerendered={Build.isServer}
         class={cx}
+        stableChild={''}
         key={key}
         getJsx={() => {
           return children;

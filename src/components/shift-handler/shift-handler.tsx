@@ -7,17 +7,20 @@ const animationendEventOptions = { once: true };
 
 @Component({
   tag: 'shift-handler',
-  styles: 'shift-handler.css',
-  scoped: true,
+  styleUrl: 'shift-handler.css',
   shadow: false,
+  scoped: false,
 })
 export class ShiftHandler {
   @Element() host: HTMLElement;
+
+  @Prop() class: string | undefined;
 
   @Prop() enter!: CxProps['enter'];
   @Prop() exit!: CxProps['exit'];
   @Prop() enterReverse: CxProps['enterReverse'];
   @Prop() exitReverse: CxProps['exitReverse'];
+  @Prop() stableChild: string | undefined;
 
   @Prop() getJsx!: () => any;
   @Prop() criteria!: any;
@@ -70,7 +73,6 @@ export class ShiftHandler {
       return;
     }
     if (this.criteria !== this.lastCrit && !this.prerendered) {
-      // if (this.crtJsx !== this.lastJsxBeforeStable && !this.prerendered) {
       this.lastBeforeStable = this.lastCrit;
       this.lastJsxBeforeStable = this.crtJsx;
       this.lastBeforeStableChildConfig = this.crtChildConfig;
@@ -88,8 +90,16 @@ export class ShiftHandler {
   }
 
   render() {
-    const { enter, exit, enterReverse, exitReverse, status, crtChildConfig, lastBeforeStableChildConfig } =
-      this;
+    const {
+      enter,
+      exit,
+      enterReverse,
+      exitReverse,
+      status,
+      crtChildConfig,
+      lastBeforeStableChildConfig,
+      stableChild,
+    } = this;
     const { c, l } = mapConfigToCx(
       enter,
       exit,
@@ -98,19 +108,14 @@ export class ShiftHandler {
       status,
       crtChildConfig,
       lastBeforeStableChildConfig,
+      stableChild,
     );
     return (
-      <Host>
+      <Host class={this.class}>
         {(this.status === 'stable' || this.status === 'between') && (
-          <AddClass key={this.crtCrit} class={c}>
-            {this.crtJsx}
-          </AddClass>
+          <AddClass class={c}>{this.crtJsx}</AddClass>
         )}
-        {this.status === 'between' && (
-          <AddClass key={this.lastBeforeStable} class={l}>
-            {this.lastJsxBeforeStable}
-          </AddClass>
-        )}
+        {this.status === 'between' && <AddClass class={l}>{this.lastJsxBeforeStable}</AddClass>}
       </Host>
     );
   }

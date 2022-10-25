@@ -7,8 +7,8 @@ export const config: Config = {
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   tsconfig: 'tsconfig.json',
-  minifyJs: true,
-  minifyCss: true,
+  minifyJs: false,
+  minifyCss: false,
   outputTargets: [
     {
       type: 'www',

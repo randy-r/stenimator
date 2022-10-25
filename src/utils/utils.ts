@@ -20,10 +20,12 @@ export function mapConfigToCx(
   status: Status,
   crtChildConfig: CxOrderProps,
   lastBeforeStableChildConfig: CxOrderProps,
+  defaultStable: string,
 ) {
   let c = `c ${status}`;
   let l = `c ${status}`;
   if (status === 'stable') {
+    c = `${c} ${defaultStable}`;
     return { c, l };
   }
 

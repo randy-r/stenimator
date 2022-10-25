@@ -1,36 +1,38 @@
 import { Component, h } from '@stencil/core';
 import { createRouter, Route, href } from 'stencil-router-v2';
-import { Stenimator } from 'stenimator';
+import { Stenimator } from '../stenimator/Stenimator';
 
 const Router = createRouter();
 
 @Component({
-  tag: 'app-root',
-  styleUrl: 'app-root.css',
-  shadow: true,
+  tag: 'st-playground',
+  styleUrl: 'st-playground.css',
+  shadow: false,
+  scoped: false,
 })
-export class AppRoot {
+export class StPlayground {
   render() {
-    const activePath = Router.activePath;
+    let activePath = Router.activePath;
     return (
       <div>
-        <h2>App Root</h2>
+        <h2>Playground</h2>
         <nav>
           <a {...href('/a', Router)}>a</a>
           <a {...href('/b', Router)}>b</a>
           <a {...href('/c', Router)}>c</a>
         </nav>
         <main>
-          <Stenimator criteria={activePath}>
+          <Stenimator criteria={activePath} class="base" enter="enter" exit="exit">
             <Router.Switch>
+              <Route path="/" to="/a" />
               <Route path="/a">
-                <div>A</div>
+                <div key="a">A</div>
               </Route>
               <Route path="/b">
-                <div>B</div>
+                <div key="b"> B</div>
               </Route>
               <Route path="/c">
-                <div>C</div>
+                <section>C</section>
               </Route>
             </Router.Switch>
           </Stenimator>

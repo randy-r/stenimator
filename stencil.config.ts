@@ -2,6 +2,8 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'stenimator',
+  minifyJs: false,
+  minifyCss: false,
   outputTargets: [
     {
       type: 'dist',

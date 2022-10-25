@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { CxOrderProps, CxProps } from "./types/types";
 export namespace Components {
     interface ShiftHandler {
+        "class": string | undefined;
         "criteria": any;
         "enter": CxProps['enter'];
         "enterReverse": CxProps['enterReverse'];
@@ -15,6 +16,9 @@ export namespace Components {
         "exitReverse": CxProps['exitReverse'];
         "getChildConfig": () => CxOrderProps;
         "getJsx": () => any;
+        "stableChild": string | undefined;
+    }
+    interface StPlayground {
     }
 }
 declare global {
@@ -24,12 +28,20 @@ declare global {
         prototype: HTMLShiftHandlerElement;
         new (): HTMLShiftHandlerElement;
     };
+    interface HTMLStPlaygroundElement extends Components.StPlayground, HTMLStencilElement {
+    }
+    var HTMLStPlaygroundElement: {
+        prototype: HTMLStPlaygroundElement;
+        new (): HTMLStPlaygroundElement;
+    };
     interface HTMLElementTagNameMap {
         "shift-handler": HTMLShiftHandlerElement;
+        "st-playground": HTMLStPlaygroundElement;
     }
 }
 declare namespace LocalJSX {
     interface ShiftHandler {
+        "class"?: string | undefined;
         "criteria": any;
         "enter": CxProps['enter'];
         "enterReverse"?: CxProps['enterReverse'];
@@ -37,9 +49,13 @@ declare namespace LocalJSX {
         "exitReverse"?: CxProps['exitReverse'];
         "getChildConfig": () => CxOrderProps;
         "getJsx": () => any;
+        "stableChild"?: string | undefined;
+    }
+    interface StPlayground {
     }
     interface IntrinsicElements {
         "shift-handler": ShiftHandler;
+        "st-playground": StPlayground;
     }
 }
 export { LocalJSX as JSX };
@@ -47,6 +63,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "shift-handler": LocalJSX.ShiftHandler & JSXBase.HTMLAttributes<HTMLShiftHandlerElement>;
+            "st-playground": LocalJSX.StPlayground & JSXBase.HTMLAttributes<HTMLStPlaygroundElement>;
         }
     }
 }
