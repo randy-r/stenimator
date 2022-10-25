@@ -9,6 +9,7 @@
 
 | Property                      | Attribute       | Description | Type                 | Default     |
 | ----------------------------- | --------------- | ----------- | -------------------- | ----------- |
+| `class`                       | `class`         |             | `string`             | `undefined` |
 | `criteria` _(required)_       | `criteria`      |             | `any`                | `undefined` |
 | `enter` _(required)_          | `enter`         |             | `string`             | `undefined` |
 | `enterReverse`                | `enter-reverse` |             | `string`             | `undefined` |
@@ -16,6 +17,7 @@
 | `exitReverse`                 | `exit-reverse`  |             | `string`             | `undefined` |
 | `getChildConfig` _(required)_ | --              |             | `() => CxOrderProps` | `undefined` |
 | `getJsx` _(required)_         | --              |             | `() => any`          | `undefined` |
+| `stableChild`                 | `stable-child`  |             | `string`             | `undefined` |
 
 
 ## Dependencies

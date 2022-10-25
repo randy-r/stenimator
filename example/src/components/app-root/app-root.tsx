@@ -21,16 +21,16 @@ export class AppRoot {
           <a {...href('/c', Router)}>c</a>
         </nav>
         <main>
-          <Stenimator criteria={activePath}>
+          <Stenimator criteria={activePath} class="base" enter="enter" exit="exit">
             <Router.Switch>
               <Route path="/a">
                 <div>A</div>
               </Route>
               <Route path="/b">
-                <div>B</div>
+                <div key="b">B</div>
               </Route>
               <Route path="/c">
-                <div>C</div>
+                <div key="c">C</div>
               </Route>
             </Router.Switch>
           </Stenimator>
