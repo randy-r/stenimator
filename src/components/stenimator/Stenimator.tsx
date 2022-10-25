@@ -25,11 +25,11 @@ export const Stenimator: FunctionalComponent<StenimatorProps> = (props, children
           utils.forEach(children, c => {
             vattrs = c.vattrs;
           });
-          const order = vattrs?.['data-order'] as number;
-          const enter = vattrs?.['data-enter'] as string;
-          const enterReverse = vattrs?.['data-enter-reverse'] as string;
-          const exit = vattrs?.['data-exit'] as string;
-          const exitReverse = vattrs?.['data-exit-reverse'] as string;
+          const order = vattrs?.['data-order'];
+          const enter = vattrs?.['data-enter'];
+          const enterReverse = vattrs?.['data-enter-reverse'];
+          const exit = vattrs?.['data-exit'];
+          const exitReverse = vattrs?.['data-exit-reverse'];
           const conf: CxOrderProps = {
             order,
             enter,
