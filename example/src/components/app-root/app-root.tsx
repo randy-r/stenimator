@@ -21,8 +21,10 @@ export class AppRoot {
           <a {...href('/c', Router)}>c</a>
         </nav>
         <main>
+          <button>press</button>
           <Stenimator criteria={activePath} class="base" enter="enter" exit="exit">
             <Router.Switch>
+              <Route path="/" to="/a" />
               <Route path="/a">
                 <div>A</div>
               </Route>

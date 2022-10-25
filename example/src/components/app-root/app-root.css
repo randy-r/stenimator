@@ -1,3 +1,22 @@
+/* @import "open-props/style"; */
+/* @import "../../../node_modules/open-props/sizes.min.css";
+@import "../../../node_modules/open-props/shadows.min.css";
+@import "../../../node_modules/open-props/fonts.min.css";
+@import "../../../node_modules/open-props/borders.min.css";
+
+
+@import "../../../node_modules/open-props/normalize.min.css";
+@import "../../../node_modules/open-props/normalize.shadow.min.css";
+*/
+/* @import "../../../node_modules/open-props/buttons.min.css"; */
+
+
+
+/* @import "open-props/normalize"; */
+/* @import "open-props/buttons"; */
+
+@import "../styles/buttons.min.css";
+
 :host {
   display: block;
 }
@@ -6,11 +25,14 @@ a {
   padding: 2rem;
 }
 
+h2 {
+  font-size: var(--size-7);
+}
+
 main > div {
   padding-block: 2rem;
   padding-inline: 6.5rem;
 }
-
 
 /* Stenimator styles */
 
