@@ -1,8 +1,6 @@
 import { Component, Host, h, State } from '@stencil/core';
-import { createRouter, Route, href } from 'stencil-router-v2';
 import { Stenimator } from 'stenimator';
-
-const Router = createRouter();
+import { Router, Route, Switch, href } from '../router';
 
 @Component({
   tag: 'router-ordered',
@@ -12,10 +10,11 @@ const Router = createRouter();
 })
 export class RouterOrdered {
   @State() showCode: boolean = false;
+  lastAp = '';
 
   render() {
-    const activePath = Router.activePath;
-    const RouterSwitch = Router.Switch;
+    let activePath = Router.activePath;
+    this.lastAp = activePath.startsWith('/ordered') ? activePath : this.lastAp;
 
     return (
       <Host>
@@ -33,14 +32,14 @@ export class RouterOrdered {
         </nav>
         <section>
           <Stenimator
-            criteria={Router.activePath}
+            criteria={this.lastAp}
             class="base"
             enter="enter"
             exit="exit"
             enterReverse="enter-reverse"
             exitReverse="exit-reverse"
           >
-            <RouterSwitch>
+            <Switch>
               <Route path="/" to="/ordered/a" />
               <Route path="/ordered" to="/ordered/a" />
               <Route path="/ordered/a">
@@ -58,7 +57,10 @@ export class RouterOrdered {
                   C
                 </div>
               </Route>
-            </RouterSwitch>
+              <Route path={/./}>
+                <div key="fallback">A</div>
+              </Route>
+            </Switch>
           </Stenimator>
           <h3
             onClick={() => {

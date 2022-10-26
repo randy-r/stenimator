@@ -1,8 +1,6 @@
 import { Component, Host, h, State } from '@stencil/core';
-import { createRouter, Route, href } from 'stencil-router-v2';
 import { Stenimator } from 'stenimator';
-
-const Router = createRouter();
+import { Router, Switch, Route, href } from '../router';
 
 @Component({
   tag: 'router-standard',
@@ -12,9 +10,11 @@ const Router = createRouter();
 })
 export class RouterStandard {
   @State() showCode: boolean = false;
+  lastAp = '';
 
   render() {
-    const activePath = Router.activePath;
+    let activePath = Router.activePath;
+    this.lastAp = activePath.startsWith('/standard') ? activePath : this.lastAp;
 
     return (
       <Host>
@@ -31,9 +31,8 @@ export class RouterStandard {
           </a>
         </nav>
         <section>
-          <Stenimator criteria={activePath} class="base" enter="enter" exit="exit">
-            <Router.Switch>
-              <Route path="/" to="/standard/a" />
+          <Stenimator criteria={this.lastAp} class="base" enter="enter" exit="exit">
+            <Switch>
               <Route path="/standard" to="/standard/a" />
               <Route path="/standard/a">
                 <div>A</div>
@@ -44,8 +43,13 @@ export class RouterStandard {
               <Route path="/standard/c">
                 <div key="/standard/c">C</div>
               </Route>
-            </Router.Switch>
+              <Route path="/" to="/standard/a" />
+              <Route path={/./}>
+                <div key="fallback">A</div>
+              </Route>
+            </Switch>
           </Stenimator>
+
           <h3
             onClick={() => {
               this.showCode = !this.showCode;

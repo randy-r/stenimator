@@ -1,10 +1,8 @@
-h2 {
-}
-
 nav {
   display: flex;
   justify-content: center;
   gap: var(--size-5);
+  margin-bottom: var(--size-3);
   
 }
 a {
@@ -15,10 +13,12 @@ a {
   font-size: var(--font-size-3);
   aspect-ratio: 1 / 1;
   text-decoration: none;
+  text-decoration-color: var(--text1);
+  color: var(--text1);
 }
 
 a:visited {
-  color: inherit;
+  color: var(--text1);
 }
 
 a.active {

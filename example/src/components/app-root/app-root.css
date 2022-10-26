@@ -72,10 +72,6 @@
   --p-maxw: 1400px;
   max-width: var(--p-maxw);
   width: 100%;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* outline: 3px solid black; */
-  /* outline-offset: -3px; */
 }
 
 .header {
@@ -102,5 +98,4 @@
 
 .code-shower {
   margin: 0 auto;
-  /* max-width: 1000px; */
 }
