@@ -32,7 +32,7 @@ export class RouterStandardCode {
             css
           </button>
         </div>
-        <div class="code">
+        <div class="code hljs--vars">
           <pre class={{ selected: this.selected === 'tsx' }}>
             <code class="jsx" innerHTML={tsxText}></code>
           </pre>
