@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, State } from '@stencil/core';
 import { createRouter, Route, href } from 'stencil-router-v2';
 import { Stenimator } from 'stenimator';
 
@@ -11,6 +11,8 @@ const Router = createRouter();
   scoped: false,
 })
 export class RouterStandard {
+  @State() showCode: boolean = false;
+
   render() {
     const activePath = Router.activePath;
 
@@ -44,8 +46,14 @@ export class RouterStandard {
               </Route>
             </Router.Switch>
           </Stenimator>
-          <h3>Code</h3>
-          <router-standard-code class="code-shower" />
+          <h3
+            onClick={() => {
+              this.showCode = !this.showCode;
+            }}
+          >
+            Code
+          </h3>
+          {this.showCode && <router-standard-code class="code-shower" />}
         </section>
       </Host>
     );

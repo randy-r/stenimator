@@ -2,13 +2,14 @@ import { Config } from '@stencil/core';
 
 // https://stenciljs.com/docs/config
 
+const minify = true;
 export const config: Config = {
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   tsconfig: 'tsconfig.json',
-  minifyJs: false,
-  minifyCss: false,
+  minifyJs: minify,
+  minifyCss: minify,
   outputTargets: [
     {
       type: 'www',

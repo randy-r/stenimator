@@ -23,7 +23,7 @@ async function main() {
       if (fName === 'css.txt') {
         options.language = 'css';
       } else if (fName === 'tsx.txt') {
-        options.language = 'jsx';
+        options.language = 'html';
       }
       const cssHl = hljs.highlight(content, options).value;
       await fs.writeFile(__dirname + `/../src/components/${name}/${fName}`, cssHl);

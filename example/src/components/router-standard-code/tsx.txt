@@ -1,17 +1,17 @@
-&lt;<span class="hljs-title class_">Stenimator</span> criteria={<span class="hljs-title class_">Router</span>.<span class="hljs-property">activePath</span>}
-  <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;base&quot;</span> enter=<span class="hljs-string">&quot;enter&quot;</span> exit=<span class="hljs-string">&quot;exit&quot;</span>
-&gt;
-  &lt;Router.Switch&gt;
-    &lt;Route path=&quot;/&quot; to=&quot;/standard/a&quot; /&gt;
-    &lt;Route path=&quot;/standard&quot; to=&quot;/standard/a&quot; /&gt;
-    &lt;Route path=&quot;/standard/a&quot;&gt;
-      &lt;div&gt;A&lt;/div&gt;
-    &lt;/Route&gt;
-    &lt;Route path=&quot;/standard/b&quot;&gt;
-      &lt;div key=&quot;/standard/b&quot;&gt;B&lt;/div&gt;
-    &lt;/Route&gt;
-    &lt;Route path=&quot;/standard/c&quot;&gt;
-      &lt;div key=&quot;/standard/c&quot;&gt;C&lt;/div&gt;
-    &lt;/Route&gt;
-  &lt;/Router.Switch&gt;
-&lt;/<span class="hljs-title class_">Stenimator</span>&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">Stenimator</span> <span class="hljs-attr">criteria</span>=<span class="hljs-string">{Router.activePath}</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;base&quot;</span> <span class="hljs-attr">enter</span>=<span class="hljs-string">&quot;enter&quot;</span> <span class="hljs-attr">exit</span>=<span class="hljs-string">&quot;exit&quot;</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RouterSwitch</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/standard/a&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/standard/a&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard/a&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard/b&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;/standard/b&quot;</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard/c&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;/standard/c&quot;</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RouterSwitch</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Stenimator</span>&gt;</span>

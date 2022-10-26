@@ -1,7 +1,7 @@
 <Stenimator criteria={Router.activePath}
   class="base" enter="enter" exit="exit"
 >
-  <Router.Switch>
+  <RouterSwitch>
     <Route path="/" to="/standard/a" />
     <Route path="/standard" to="/standard/a" />
     <Route path="/standard/a">
@@ -13,5 +13,5 @@
     <Route path="/standard/c">
       <div key="/standard/c">C</div>
     </Route>
-  </Router.Switch>
+  </RouterSwitch>
 </Stenimator>
