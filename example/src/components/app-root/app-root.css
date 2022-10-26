@@ -1,7 +1,10 @@
 @import '../styles/buttons.min.css';
+@import './example-area.css';
+@import './github-hl.css';
 
+/* Map to semantics */
 :host {
-  --brand-light: var(--cyan-8);
+  --brand-light: var(--cyan-9);
 
   --text1-light: var(--gray-8);
   --text2-light: var(--gray-7);
@@ -10,10 +13,22 @@
   --surface2-light: var(--gray-0);
   --surface3-light: var(--gray-1);
   --surface4-light: var(--gray-3);
+
+  /* --- */
+
+  --brand-dark: var(--cyan-5);
+
+  --text1-dark: var(--gray-1);
+  --text2-dark: var(--gray-3);
+
+  --surface1-dark: var(--gray-9);
+  --surface2-dark: var(--gray-8);
+  --surface3-dark: var(--gray-7);
+  --surface4-dark: var(--gray-6);
 }
 
+/* Light theme */
 :host {
-  /* Light theme */
   --brand: var(--brand-light);
 
   --text1: var(--text1-light);
@@ -24,64 +39,66 @@
   --surface3: var(--surface3-light);
   --surface4: var(--surface4-light);
 
-  --bg: var(--bg-light);
+}
+
+/* Dark theme */
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --brand: var(--brand-dark);
+
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+
+    --surface1: var(--surface1-dark);
+    --surface2: var(--surface2-dark);
+    --surface3: var(--surface3-dark);
+    --surface4: var(--surface4-dark);
+
+  }
 }
 
 :host {
-  display: block;
   display: block;
   min-height: 100%;
   height: auto !important;
   height: 100%;
   background-color: var(--bg);
+  margin: 0 auto !important;
 }
 
 :host {
   background-color: var(--bg);
+  color: var(--text1);
   --p-maxw: 1400px;
   max-width: var(--p-maxw);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  outline: 3px solid black;
-  outline-offset: -3px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* outline: 3px solid black; */
+  /* outline-offset: -3px; */
 }
 
 .header {
   background-color: var(--bg);
   border-bottom: var(--border-size-1) solid var(--surface1);
   padding-inline: var(--size-4);
+  display: inline-block;
 }
 
 .header h4 {
   color: var(--brand);
   font-size: var(--font-size-3);
   margin-block: var(--size-2);
-
-
 }
 
 .content {
   background-color: var(--bg);
   display: block;
-  width: 100%;
   max-width: calc(var(--p-maxw) - 2 * 100px);
   flex: 1;
   margin: 0 auto;
   padding: var(--size-4);
-}
-
-a {
-  padding: 2rem;
-}
-
-h2 {
-  font-size: var(--size-7);
-}
-
-main > div {
-  padding-block: 2rem;
-  padding-inline: 6.5rem;
 }
 
 /* Stenimator styles */
@@ -93,7 +110,6 @@ main > div {
   --duration: 500ms;
   --timing: ease-in-out;
   position: relative;
-  max-width: 400px;
   overflow: hidden;
 }
 

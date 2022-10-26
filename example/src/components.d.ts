@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppRoot {
     }
+    interface RouterStandard {
+    }
+    interface RouterStandardCode {
+    }
 }
 declare global {
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
@@ -16,15 +20,35 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLRouterStandardElement extends Components.RouterStandard, HTMLStencilElement {
+    }
+    var HTMLRouterStandardElement: {
+        prototype: HTMLRouterStandardElement;
+        new (): HTMLRouterStandardElement;
+    };
+    interface HTMLRouterStandardCodeElement extends Components.RouterStandardCode, HTMLStencilElement {
+    }
+    var HTMLRouterStandardCodeElement: {
+        prototype: HTMLRouterStandardCodeElement;
+        new (): HTMLRouterStandardCodeElement;
+    };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
+        "router-standard": HTMLRouterStandardElement;
+        "router-standard-code": HTMLRouterStandardCodeElement;
     }
 }
 declare namespace LocalJSX {
     interface AppRoot {
     }
+    interface RouterStandard {
+    }
+    interface RouterStandardCode {
+    }
     interface IntrinsicElements {
         "app-root": AppRoot;
+        "router-standard": RouterStandard;
+        "router-standard-code": RouterStandardCode;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +56,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "router-standard": LocalJSX.RouterStandard & JSXBase.HTMLAttributes<HTMLRouterStandardElement>;
+            "router-standard-code": LocalJSX.RouterStandardCode & JSXBase.HTMLAttributes<HTMLRouterStandardCodeElement>;
         }
     }
 }

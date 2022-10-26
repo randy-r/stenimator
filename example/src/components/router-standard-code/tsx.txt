@@ -1,0 +1,17 @@
+&lt;<span class="hljs-title class_">Stenimator</span> criteria={<span class="hljs-title class_">Router</span>.<span class="hljs-property">activePath</span>}
+  <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;base&quot;</span> enter=<span class="hljs-string">&quot;enter&quot;</span> exit=<span class="hljs-string">&quot;exit&quot;</span>
+&gt;
+  &lt;Router.Switch&gt;
+    &lt;Route path=&quot;/&quot; to=&quot;/standard/a&quot; /&gt;
+    &lt;Route path=&quot;/standard&quot; to=&quot;/standard/a&quot; /&gt;
+    &lt;Route path=&quot;/standard/a&quot;&gt;
+      &lt;div&gt;A&lt;/div&gt;
+    &lt;/Route&gt;
+    &lt;Route path=&quot;/standard/b&quot;&gt;
+      &lt;div key=&quot;/standard/b&quot;&gt;B&lt;/div&gt;
+    &lt;/Route&gt;
+    &lt;Route path=&quot;/standard/c&quot;&gt;
+      &lt;div key=&quot;/standard/c&quot;&gt;C&lt;/div&gt;
+    &lt;/Route&gt;
+  &lt;/Router.Switch&gt;
+&lt;/<span class="hljs-title class_">Stenimator</span>&gt;

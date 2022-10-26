@@ -9,12 +9,14 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "serve": "static-server ./www"
-
+    "serve": "static-server ./www",
+    "hl": "node ./highlight/hightlight.js"
   },
   "devDependencies": {
     "@stencil/core": "2.18.1",
     "@types/jest": "^27.0.3",
+    "fs-extra": "^10.1.0",
+    "highlight.js": "^11.6.0",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0",

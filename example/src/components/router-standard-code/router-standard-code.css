@@ -1,0 +1,52 @@
+.code-renderer {
+  display: flex;
+  flex-direction: column;
+  outline-offset: -3px;
+}
+
+.code-renderer .tabs {
+  display: flex;
+}
+
+.code-renderer .tabs > * {
+  flex: 1;
+}
+
+.code-renderer .tabs > *:first-child {
+  margin-right: var(--size-1);
+}
+
+
+.code-renderer .tabs > *:last-child {
+  margin-left: var(--size-1);
+}
+
+.code-renderer .tabs .selected {
+  color: var(--brand);
+}
+
+.code-renderer .code {
+  display: flex;
+  gap: var(--size-2);
+}
+
+.code-renderer .code > pre {
+  display: none;
+  overflow-x: auto;
+}
+.code-renderer .code > pre.selected {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+@media only screen and (min-width: 800px) {
+  .code-renderer .tabs {
+    display: none;
+  }
+  .code-renderer .code > pre {
+    justify-content: center;
+    display: flex;
+    flex: 1;
+  }
+}

@@ -1,0 +1,28 @@
+h2 {
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-5);
+  
+}
+a {
+  padding-inline: var(--size-5);
+  border-radius: var(--radius-1);
+  background-color: var(--surface-1);
+  box-shadow: var(--shadow-3);
+  font-size: var(--font-size-3);
+  aspect-ratio: 1 / 1;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a.active {
+  background-color: var(--bg);
+  color: var(--brand);
+  font-weight: var(--font-weight-6);
+}
