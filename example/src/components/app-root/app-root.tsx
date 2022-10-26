@@ -13,6 +13,7 @@ export class AppRoot {
         <section class="content">
             <router-standard />
             <router-ordered />
+            <router-individual />
         </section>
       </Host>
     );

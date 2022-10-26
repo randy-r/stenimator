@@ -11,7 +11,7 @@ export const StenimatorItem: FunctionalComponent<CxOrderProps> = (props, childre
         ['data-enter']: props.enter,
         ['data-exit']: props.exit,
         ['data-enter-reverse']: props.enterReverse,
-        ['data-exist-reverse']: props.exitReverse,
+        ['data-exit-reverse']: props.exitReverse,
       },
     };
   });

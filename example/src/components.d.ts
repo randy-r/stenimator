@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppRoot {
     }
+    interface RouterIndividual {
+    }
     interface RouterOrdered {
     }
     interface RouterStandard {
@@ -21,6 +23,12 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLRouterIndividualElement extends Components.RouterIndividual, HTMLStencilElement {
+    }
+    var HTMLRouterIndividualElement: {
+        prototype: HTMLRouterIndividualElement;
+        new (): HTMLRouterIndividualElement;
     };
     interface HTMLRouterOrderedElement extends Components.RouterOrdered, HTMLStencilElement {
     }
@@ -42,6 +50,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
+        "router-individual": HTMLRouterIndividualElement;
         "router-ordered": HTMLRouterOrderedElement;
         "router-standard": HTMLRouterStandardElement;
         "router-standard-code": HTMLRouterStandardCodeElement;
@@ -49,6 +58,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppRoot {
+    }
+    interface RouterIndividual {
     }
     interface RouterOrdered {
     }
@@ -58,6 +69,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-root": AppRoot;
+        "router-individual": RouterIndividual;
         "router-ordered": RouterOrdered;
         "router-standard": RouterStandard;
         "router-standard-code": RouterStandardCode;
@@ -68,6 +80,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "router-individual": LocalJSX.RouterIndividual & JSXBase.HTMLAttributes<HTMLRouterIndividualElement>;
             "router-ordered": LocalJSX.RouterOrdered & JSXBase.HTMLAttributes<HTMLRouterOrderedElement>;
             "router-standard": LocalJSX.RouterStandard & JSXBase.HTMLAttributes<HTMLRouterStandardElement>;
             "router-standard-code": LocalJSX.RouterStandardCode & JSXBase.HTMLAttributes<HTMLRouterStandardCodeElement>;

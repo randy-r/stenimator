@@ -17,21 +17,21 @@
   transform: translateX(0);
 }
 
-.base .enter {
+.enter {
   animation-duration: var(--duration);
   animation-timing-function: var(--timing);
-  animation-name: enter-right-left;
+  animation-name: enter-right;
 }
 
-.base .exit {
+.exit {
   position: absolute;
   top: 0;
   animation-duration: var(--duration);
   animation-timing-function: var(--timing);
-  animation-name: exit-right-left;
+  animation-name: exit-right;
 }
 
-@keyframes enter-right-left {
+@keyframes enter-right {
   from {
     opacity: 0;
     transform: translateX(var(--x));
@@ -42,7 +42,7 @@
   }
 }
 
-@keyframes exit-right-left {
+@keyframes exit-right {
   from {
     opacity: 1;
     transform: translateX(0);
@@ -56,7 +56,7 @@
 .enter-reverse {
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
-  animation-name: enter-left-right;
+  animation-name: enter-left;
 }
 
 .exit-reverse {
@@ -64,10 +64,10 @@
   top: 0;
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
-  animation-name: exit-left-right;
+  animation-name: exit-left;
 }
 
-@keyframes enter-left-right {
+@keyframes enter-left {
   from {
     opacity: 0;
     transform: translateX(-100%);
@@ -78,13 +78,85 @@
   }
 }
 
-@keyframes exit-left-right {
+@keyframes exit-left {
   from {
     opacity: 1;
     transform: translateX(0);
   }
   to {
     transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.enter2 {
+  animation-duration: var(--duration);
+  animation-timing-function: var(--timing);
+  animation-name: enter-top-right;
+}
+
+.exit2 {
+  position: absolute;
+  top: 0;
+  animation-duration: var(--duration);
+  animation-timing-function: var(--timing);
+  animation-name: exit-top-left;
+}
+
+@keyframes enter-top-right {
+  from {
+    opacity: 0;
+    transform: translate(100px, -100px);
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-top-left {
+  from {
+    opacity: 1;
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100px, -100px);
+    opacity: 0;
+  }
+}
+
+.enter2-reverse {
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-name: enter-bottom-left;
+}
+
+.exit2-reverse {
+  position: absolute;
+  top: 0;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-name: exit-bottom-right;
+}
+
+@keyframes enter-bottom-left {
+  from {
+    opacity: 0;
+    transform: translate(-100px, 100px);
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-bottom-right {
+  from {
+    opacity: 1;
+    transform: translate(0);
+  }
+  to {
+    transform: translate(100px, 100px);
     opacity: 0;
   }
 }
