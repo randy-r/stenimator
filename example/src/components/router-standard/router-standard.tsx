@@ -18,7 +18,7 @@ export class RouterStandard {
 
     return (
       <Host>
-        <h2>Page "Transitions"</h2>
+        <h2>Page Transitions</h2>
         <nav>
           <a {...href('/standard/a', Router)} class={{ active: activePath === '/standard/a' }}>
             a

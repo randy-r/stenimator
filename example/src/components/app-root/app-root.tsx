@@ -1,8 +1,5 @@
 import { Component, h, Host } from '@stencil/core';
-import { createRouter, Route, href } from 'stencil-router-v2';
-import { Stenimator } from 'stenimator';
-
-const Router = createRouter();
+import { createRouter } from 'stencil-router-v2';
 
 @Component({
   tag: 'app-root',
@@ -15,7 +12,8 @@ export class AppRoot {
       <Host>
         <header class="header"><h4>Stenimator</h4></header>
         <section class="content">
-            <router-standard />
+            {/* <router-standard /> */}
+            <router-ordered />
         </section>
       </Host>
     );

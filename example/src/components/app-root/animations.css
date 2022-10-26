@@ -1,0 +1,90 @@
+/* Stenimator styles */
+
+.base {
+  display: block;
+  --x: 100%;
+  --x-n: calc(0px - 100%);
+  --duration: 500ms;
+  --timing: ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.base > * {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  transform: translateX(0);
+}
+
+.base .enter {
+  animation-duration: var(--duration);
+  animation-timing-function: var(--timing);
+  animation-name: enter-right-left;
+}
+
+.base .exit {
+  position: absolute;
+  top: 0;
+  animation-duration: var(--duration);
+  animation-timing-function: var(--timing);
+  animation-name: exit-right-left;
+}
+
+@keyframes enter-right-left {
+  from {
+    opacity: 0;
+    transform: translateX(var(--x));
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-right-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--x-n));
+    opacity: 0;
+  }
+}
+
+.enter-reverse {
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-name: enter-left-right;
+}
+
+.exit-reverse {
+  position: absolute;
+  top: 0;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-name: exit-left-right;
+}
+
+@keyframes enter-left-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-left-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
