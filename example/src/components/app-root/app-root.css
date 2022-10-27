@@ -2,6 +2,7 @@
 @import './example-area.css';
 @import './github-hl.css';
 @import './animations.css';
+@import '../Spinner/Spinner.css';
 
 /* Map to semantics */
 :host {
@@ -72,6 +73,7 @@
   --p-maxw: 1400px;
   max-width: var(--p-maxw);
   width: 100%;
+  line-height: var(--font-lineheight-3);
 }
 
 .header {

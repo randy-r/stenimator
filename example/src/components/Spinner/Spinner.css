@@ -1,0 +1,9 @@
+.spinner_GuJz {
+  transform-origin: center;
+  animation: spinner_STY6 1.5s linear infinite;
+}
+@keyframes spinner_STY6 {
+  100% {
+    transform: rotate(360deg);
+  }
+}

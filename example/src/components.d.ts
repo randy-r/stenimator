@@ -10,11 +10,15 @@ export namespace Components {
     }
     interface CodeLoader {
     }
+    interface DataFetching {
+    }
     interface RouterIndividual {
     }
     interface RouterOrdered {
     }
     interface RouterStandard {
+    }
+    interface SpinnerLoader {
     }
 }
 declare global {
@@ -29,6 +33,12 @@ declare global {
     var HTMLCodeLoaderElement: {
         prototype: HTMLCodeLoaderElement;
         new (): HTMLCodeLoaderElement;
+    };
+    interface HTMLDataFetchingElement extends Components.DataFetching, HTMLStencilElement {
+    }
+    var HTMLDataFetchingElement: {
+        prototype: HTMLDataFetchingElement;
+        new (): HTMLDataFetchingElement;
     };
     interface HTMLRouterIndividualElement extends Components.RouterIndividual, HTMLStencilElement {
     }
@@ -48,12 +58,20 @@ declare global {
         prototype: HTMLRouterStandardElement;
         new (): HTMLRouterStandardElement;
     };
+    interface HTMLSpinnerLoaderElement extends Components.SpinnerLoader, HTMLStencilElement {
+    }
+    var HTMLSpinnerLoaderElement: {
+        prototype: HTMLSpinnerLoaderElement;
+        new (): HTMLSpinnerLoaderElement;
+    };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
         "code-loader": HTMLCodeLoaderElement;
+        "data-fetching": HTMLDataFetchingElement;
         "router-individual": HTMLRouterIndividualElement;
         "router-ordered": HTMLRouterOrderedElement;
         "router-standard": HTMLRouterStandardElement;
+        "spinner-loader": HTMLSpinnerLoaderElement;
     }
 }
 declare namespace LocalJSX {
@@ -61,18 +79,24 @@ declare namespace LocalJSX {
     }
     interface CodeLoader {
     }
+    interface DataFetching {
+    }
     interface RouterIndividual {
     }
     interface RouterOrdered {
     }
     interface RouterStandard {
     }
+    interface SpinnerLoader {
+    }
     interface IntrinsicElements {
         "app-root": AppRoot;
         "code-loader": CodeLoader;
+        "data-fetching": DataFetching;
         "router-individual": RouterIndividual;
         "router-ordered": RouterOrdered;
         "router-standard": RouterStandard;
+        "spinner-loader": SpinnerLoader;
     }
 }
 export { LocalJSX as JSX };
@@ -81,9 +105,11 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "code-loader": LocalJSX.CodeLoader & JSXBase.HTMLAttributes<HTMLCodeLoaderElement>;
+            "data-fetching": LocalJSX.DataFetching & JSXBase.HTMLAttributes<HTMLDataFetchingElement>;
             "router-individual": LocalJSX.RouterIndividual & JSXBase.HTMLAttributes<HTMLRouterIndividualElement>;
             "router-ordered": LocalJSX.RouterOrdered & JSXBase.HTMLAttributes<HTMLRouterOrderedElement>;
             "router-standard": LocalJSX.RouterStandard & JSXBase.HTMLAttributes<HTMLRouterStandardElement>;
+            "spinner-loader": LocalJSX.SpinnerLoader & JSXBase.HTMLAttributes<HTMLSpinnerLoaderElement>;
         }
     }
 }

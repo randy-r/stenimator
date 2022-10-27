@@ -14,6 +14,7 @@ export class AppRoot {
             <router-standard />
             <router-ordered />
             <router-individual />
+            <data-fetching />
         </section>
       </Host>
     );
