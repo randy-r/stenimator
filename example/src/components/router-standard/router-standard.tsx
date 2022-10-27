@@ -1,5 +1,6 @@
 import { Component, Host, h, State } from '@stencil/core';
 import { Stenimator } from 'stenimator';
+import { CodeSection } from '../Code/CodeSection';
 import { Router, Switch, Route, href } from '../router';
 
 @Component({
@@ -50,14 +51,11 @@ export class RouterStandard {
             </Switch>
           </Stenimator>
 
-          <h3
-            onClick={() => {
-              this.showCode = !this.showCode;
-            }}
-          >
-            Code
-          </h3>
-          {this.showCode && <router-standard-code class="code-shower" />}
+          <CodeSection
+            type="standard"
+            onClick={() => (this.showCode = !this.showCode)}
+            show={this.showCode}
+          />
         </section>
       </Host>
     );

@@ -35,3 +35,8 @@ body {
   width: 100%;
   background-color: var(--bg);
 }
+
+html{
+  overflow-y: scroll;
+}
+

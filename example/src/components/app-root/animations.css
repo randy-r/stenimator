@@ -2,12 +2,19 @@
 
 .base {
   display: block;
-  --x: 100%;
-  --x-n: calc(0px - 100%);
-  --duration: 500ms;
-  --timing: ease-in-out;
   position: relative;
   overflow: hidden;
+}
+
+.show-code-base {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  /* min-height: 400px; */
+}
+
+.show-code-base > * {
+  width: 100%;
 }
 
 .base > * {
@@ -18,23 +25,23 @@
 }
 
 .enter {
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
   animation-name: enter-right;
 }
 
 .exit {
   position: absolute;
   top: 0;
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
   animation-name: exit-right;
 }
 
 @keyframes enter-right {
   from {
     opacity: 0;
-    transform: translateX(var(--x));
+    transform: translateX(50%);
   }
   to {
     transform: translateX(0px);
@@ -48,7 +55,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(var(--x-n));
+    transform: translateX(-100%);
     opacity: 0;
   }
 }
@@ -90,16 +97,16 @@
 }
 
 .enter2 {
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
   animation-name: enter-top-right;
 }
 
 .exit2 {
   position: absolute;
   top: 0;
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
   animation-name: exit-top-left;
 }
 
@@ -158,5 +165,51 @@
   to {
     transform: translate(100px, 100px);
     opacity: 0;
+  }
+}
+
+.enter-top {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 0.75);
+  animation-timing-function: ease-in;
+  animation-name: enter-top;
+  transform-box: content-box;
+}
+
+@keyframes enter-top {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, -75%);
+  }
+  10% {
+    opacity: 0.6;
+    transform: translate(0, -10%);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.exit-top {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 0.75);
+  animation-timing-function: ease-in;
+  animation-name: exit-top;
+  transform-box: content-box;
+}
+
+@keyframes exit-top {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  90% {
+    opacity: 0.6;
+    transform: translate(0, -10%);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(0, -75%);
   }
 }

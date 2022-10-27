@@ -1,5 +1,6 @@
 import { Component, Host, h, State } from '@stencil/core';
 import { Stenimator, StenimatorItem } from 'stenimator';
+import { CodeSection } from '../Code/CodeSection';
 import { Router, Route, Switch, href } from '../router';
 
 @Component({
@@ -18,7 +19,7 @@ export class RouterIndividual {
 
     return (
       <Host>
-        <h2>individual Page Transitions</h2>
+        <h2>Individual Page Transitions</h2>
         <nav>
           <a {...href('/individual/a', Router)} class={{ active: activePath === '/individual/a' }}>
             a
@@ -68,14 +69,11 @@ export class RouterIndividual {
               </Route>
             </Switch>
           </Stenimator>
-          <h3
-            onClick={() => {
-              this.showCode = !this.showCode;
-            }}
-          >
-            Code
-          </h3>
-          {this.showCode && <router-standard-code class="code-shower" />}
+          <CodeSection
+            type="individual"
+            onClick={() => (this.showCode = !this.showCode)}
+            show={this.showCode}
+          />
         </section>
       </Host>
     );

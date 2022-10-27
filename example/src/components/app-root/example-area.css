@@ -3,25 +3,34 @@ nav {
   justify-content: center;
   gap: var(--size-5);
   margin-bottom: var(--size-3);
-  
 }
-a {
+nav > a,
+.btn-like {
   padding-inline: var(--size-5);
   border-radius: var(--radius-1);
   background-color: var(--surface-1);
   box-shadow: var(--shadow-3);
-  font-size: var(--font-size-3);
-  aspect-ratio: 1 / 1;
+  font-size: var(--font-size-2);
   text-decoration: none;
   text-decoration-color: var(--text1);
   color: var(--text1);
+  cursor: pointer;
+  line-height: var(--font-lineheight-3);
+  min-height: 30px;
+  display: inline-block;
 }
 
-a:visited {
+nav > a {
+  font-size: var(--font-size-3);
+}
+
+nav > a:visited,
+.btn-like:visited {
   color: var(--text1);
 }
 
-a.active {
+nav > a.active,
+.btn-like.active {
   background-color: var(--bg);
   color: var(--brand);
   font-weight: var(--font-weight-6);

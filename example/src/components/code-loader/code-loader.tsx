@@ -3,12 +3,12 @@ import tsxText from './tsx.txt';
 import cssText from './css.txt';
 
 @Component({
-  tag: 'router-standard-code',
-  styleUrl: 'router-standard-code.css',
+  tag: 'code-loader',
+  styleUrl: 'code-loader.css',
   shadow: false,
   scoped: false,
 })
-export class RouterStandardCode {
+export class CodeLoader {
   @State() selected: 'css' | 'tsx' = 'tsx';
 
   render() {
