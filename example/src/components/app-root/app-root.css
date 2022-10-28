@@ -81,7 +81,7 @@
   border-bottom: var(--border-size-1) solid var(--surface1);
   padding-inline: var(--size-4);
   display: inline-block;
-  width: 100%;
+  display: flex;
 }
 
 .header h4 {

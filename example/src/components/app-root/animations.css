@@ -226,7 +226,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .base-data > * {
@@ -268,11 +267,11 @@
   animation-duration: 300ms;
   transform-box: content-box;
   animation-timing-function: cubic-bezier(0.42, 0, 0.78, 1.07);
+  opacity: 1;
 }
 
 @keyframes exit-bottom-rotate {
   from {
-    opacity: 1;
     transform: rotate3d(1, 0, 0, 0deg);
   }
 

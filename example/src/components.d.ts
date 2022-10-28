@@ -12,6 +12,8 @@ export namespace Components {
     }
     interface DataFetching {
     }
+    interface DataFetchingFast {
+    }
     interface RouterIndividual {
     }
     interface RouterOrdered {
@@ -39,6 +41,12 @@ declare global {
     var HTMLDataFetchingElement: {
         prototype: HTMLDataFetchingElement;
         new (): HTMLDataFetchingElement;
+    };
+    interface HTMLDataFetchingFastElement extends Components.DataFetchingFast, HTMLStencilElement {
+    }
+    var HTMLDataFetchingFastElement: {
+        prototype: HTMLDataFetchingFastElement;
+        new (): HTMLDataFetchingFastElement;
     };
     interface HTMLRouterIndividualElement extends Components.RouterIndividual, HTMLStencilElement {
     }
@@ -68,6 +76,7 @@ declare global {
         "app-root": HTMLAppRootElement;
         "code-loader": HTMLCodeLoaderElement;
         "data-fetching": HTMLDataFetchingElement;
+        "data-fetching-fast": HTMLDataFetchingFastElement;
         "router-individual": HTMLRouterIndividualElement;
         "router-ordered": HTMLRouterOrderedElement;
         "router-standard": HTMLRouterStandardElement;
@@ -81,6 +90,8 @@ declare namespace LocalJSX {
     }
     interface DataFetching {
     }
+    interface DataFetchingFast {
+    }
     interface RouterIndividual {
     }
     interface RouterOrdered {
@@ -93,6 +104,7 @@ declare namespace LocalJSX {
         "app-root": AppRoot;
         "code-loader": CodeLoader;
         "data-fetching": DataFetching;
+        "data-fetching-fast": DataFetchingFast;
         "router-individual": RouterIndividual;
         "router-ordered": RouterOrdered;
         "router-standard": RouterStandard;
@@ -106,6 +118,7 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "code-loader": LocalJSX.CodeLoader & JSXBase.HTMLAttributes<HTMLCodeLoaderElement>;
             "data-fetching": LocalJSX.DataFetching & JSXBase.HTMLAttributes<HTMLDataFetchingElement>;
+            "data-fetching-fast": LocalJSX.DataFetchingFast & JSXBase.HTMLAttributes<HTMLDataFetchingFastElement>;
             "router-individual": LocalJSX.RouterIndividual & JSXBase.HTMLAttributes<HTMLRouterIndividualElement>;
             "router-ordered": LocalJSX.RouterOrdered & JSXBase.HTMLAttributes<HTMLRouterOrderedElement>;
             "router-standard": LocalJSX.RouterStandard & JSXBase.HTMLAttributes<HTMLRouterStandardElement>;

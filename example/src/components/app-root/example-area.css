@@ -35,3 +35,19 @@ nav > a.active,
   color: var(--brand);
   font-weight: var(--font-weight-6);
 }
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fetch-btn-parent {
+  display: flex;
+  justify-content: center;
+}

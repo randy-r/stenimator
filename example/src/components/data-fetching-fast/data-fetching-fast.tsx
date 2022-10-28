@@ -2,7 +2,6 @@ import { Component, Host, h, State } from '@stencil/core';
 import { Stenimator } from 'stenimator';
 import { delay } from '../../utils/delay';
 import { CodeSection } from '../Code/CodeSection';
-import { Spinner } from '../Spinner/Spinner';
 
 const dataList = [
   { id: 1, name: 'Jean Grey' },
@@ -10,16 +9,16 @@ const dataList = [
 ];
 
 const fetchData = async (id: number) => {
-  await delay(50 + Math.ceil(Math.random() * 50));
+  await delay(10 + Math.ceil(Math.random() * 50));
   return dataList.find(d => d.id === id);
 };
 
 @Component({
-  tag: 'data-fetching',
+  tag: 'data-fetching-fast',
   shadow: false,
   scoped: false,
 })
-export class DataFetching {
+export class DataFetchingFast {
   @State() showCode: boolean = false;
   @State() loading: boolean | null = false;
   @State() data: { id: number; name: string } | null = dataList[0];
@@ -27,7 +26,6 @@ export class DataFetching {
 
   handleClick = () => {
     this.loading = true;
-    this.data = null;
     fetchData(this.id).then(r => {
       this.loading = false;
       this.data = r;
@@ -36,21 +34,20 @@ export class DataFetching {
   };
 
   render() {
-    const { loading, data } = this;
+    const { data } = this;
     return (
       <Host>
-        <h2>Data fetching</h2>
+        <h2>Data fetching fast</h2>
         <div class="fetch-btn-parent">
           <button onClick={this.handleClick}>Fetch Data</button>
         </div>
         <Stenimator
-          criteria={loading}
+          criteria={data}
           class="base-data"
           enter="enter-top-rotate"
           exit="exit-bottom-rotate"
         >
-          {loading === true && <Spinner class="spinner" key="spinner" />}
-          {loading === false && <span key="data"> {data.name} </span>}
+          <span key={data.id}>{data.name}</span>
         </Stenimator>
         <CodeSection
           type="data-fetching"
