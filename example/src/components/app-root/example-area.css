@@ -31,7 +31,8 @@ nav > a:visited,
 
 nav > a.active,
 .btn-like.active {
-  background-color: var(--bg);
+   /* TODO define a surface for this */
+  background-color: var(--bg); 
   color: var(--brand);
   font-weight: var(--font-weight-6);
 }

@@ -59,25 +59,26 @@
 }
 
 :host {
+  filter: none !important;
+
   display: block;
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  background-color: var(--bg);
   margin: 0 auto !important;
 }
 
 :host {
-  background-color: var(--bg);
   color: var(--text1);
   --p-maxw: 1400px;
   max-width: var(--p-maxw);
   width: 100%;
   line-height: var(--font-lineheight-3);
+
+  padding-bottom: var(--size-9);
 }
 
 .header {
-  background-color: var(--bg);
   border-bottom: var(--border-size-1) solid var(--surface1);
   padding-inline: var(--size-4);
   display: inline-block;
@@ -91,7 +92,6 @@
 }
 
 .content {
-  background-color: var(--bg);
   display: block;
   max-width: calc(var(--p-maxw) - 2 * 100px);
   flex: 1;
