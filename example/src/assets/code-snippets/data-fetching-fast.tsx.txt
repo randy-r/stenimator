@@ -1,1 +1,9 @@
-const fast = &#x27;tsx&#x27;;
+<span class="hljs-tag">&lt;<span class="hljs-name">Stenimator</span>
+  <span class="hljs-attr">criteria</span>=<span class="hljs-string">{data}</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;base-data&quot;</span>
+  <span class="hljs-attr">enter</span>=<span class="hljs-string">&quot;enter-top-rotate&quot;</span>
+  <span class="hljs-attr">exit</span>=<span class="hljs-string">&quot;exit-bottom-rotate&quot;</span>
+&gt;</span>
+  {/* Note: retain previous data until new data is loading. */}
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{data.id}</span>&gt;</span>{data.name}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Stenimator</span>&gt;</span>

@@ -41,6 +41,7 @@ export class DataFetchingFast {
         <div class="fetch-btn-parent">
           <button onClick={this.handleClick}>Fetch Data</button>
         </div>
+        {/* Note: retain previous data until new data is loading. */}
         <Stenimator
           criteria={data}
           class="base-data"

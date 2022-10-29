@@ -1,1 +1,9 @@
-const fast = 'tsx';
+<Stenimator
+  criteria={data}
+  class="base-data"
+  enter="enter-top-rotate"
+  exit="exit-bottom-rotate"
+>
+  {/* Note: retain previous data until new data is loading. */}
+  <span key={data.id}>{data.name}</span>
+</Stenimator>

@@ -1,54 +1,61 @@
-<span class="hljs-selector-class">.base</span> {
-  <span class="hljs-attribute">display</span>: block;
-  <span class="hljs-attr">--x</span>: <span class="hljs-number">100%</span>;
-  <span class="hljs-attr">--x-n</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">0px</span> - <span class="hljs-number">100%</span>);
-  <span class="hljs-attr">--duration</span>: <span class="hljs-number">500ms</span>;
-  <span class="hljs-attr">--timing</span>: ease-in-out;
-  <span class="hljs-attribute">position</span>: relative;
-  <span class="hljs-attribute">overflow</span>: hidden;
+<span class="hljs-comment">/* ...styles from the previous example  */</span>
+
+<span class="hljs-selector-class">.enter2</span> {
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">500ms</span>;
+  <span class="hljs-attribute">animation-name</span>: enter-top-right;
 }
 
-<span class="hljs-selector-class">.base</span> &gt; * {
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-  <span class="hljs-attribute">text-align</span>: center;
-  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">3rem</span>;
-  <span class="hljs-comment">/* in Firefox elements glitch a bit when
-  this initial transform is not applied  */</span>
-  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">0</span>);
-}
-
-<span class="hljs-selector-class">.base</span> <span class="hljs-selector-class">.enter</span> {
-  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-built_in">var</span>(--duration);
-  <span class="hljs-attribute">animation-timing-function</span>: <span class="hljs-built_in">var</span>(--timing);
-  <span class="hljs-attribute">animation-name</span>: enter-right-left;
-}
-
-<span class="hljs-selector-class">.base</span> <span class="hljs-selector-class">.exit</span> {
+<span class="hljs-selector-class">.exit2</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-built_in">var</span>(--duration);
-  <span class="hljs-attribute">animation-timing-function</span>: <span class="hljs-built_in">var</span>(--timing);
-  <span class="hljs-attribute">animation-name</span>: exit-right-left;
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">500ms</span>;
+  <span class="hljs-attribute">animation-name</span>: exit-top-left;
 }
 
-<span class="hljs-keyword">@keyframes</span> enter-right-left {
+<span class="hljs-keyword">@keyframes</span> enter-top-right {
   <span class="hljs-selector-tag">from</span> {
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-built_in">var</span>(--x));
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(<span class="hljs-number">100px</span>, -<span class="hljs-number">100px</span>);
   }
   <span class="hljs-selector-tag">to</span> {
     <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">0px</span>);
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
   }
 }
 
-<span class="hljs-keyword">@keyframes</span> exit-right-left {
+<span class="hljs-keyword">@keyframes</span> exit-top-left {
   <span class="hljs-selector-tag">from</span> {
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">0</span>);
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(<span class="hljs-number">0</span>);
   }
   <span class="hljs-selector-tag">to</span> {
-    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-built_in">var</span>(--x-n));
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">100px</span>, -<span class="hljs-number">100px</span>);
+  }
+}
+
+<span class="hljs-selector-class">.enter2-reverse</span> {
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">500ms</span>;
+  <span class="hljs-attribute">animation-name</span>: enter-bottom-left;
+}
+
+<span class="hljs-selector-class">.exit2-reverse</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">500ms</span>;
+  <span class="hljs-attribute">animation-name</span>: exit-bottom-right;
+}
+
+<span class="hljs-keyword">@keyframes</span> enter-bottom-left {
+  <span class="hljs-selector-tag">from</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">100px</span>, <span class="hljs-number">100px</span>);
+  }
+  <span class="hljs-selector-tag">to</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(<span class="hljs-number">0</span>);
+  }
+}
+
+<span class="hljs-keyword">@keyframes</span> exit-bottom-right {
+  <span class="hljs-selector-tag">from</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(<span class="hljs-number">0</span>);
+  }
+  <span class="hljs-selector-tag">to</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(<span class="hljs-number">100px</span>, <span class="hljs-number">100px</span>);
   }
 }

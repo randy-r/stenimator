@@ -1,54 +1,61 @@
-.base {
-  display: block;
-  --x: 100%;
-  --x-n: calc(0px - 100%);
-  --duration: 500ms;
-  --timing: ease-in-out;
-  position: relative;
-  overflow: hidden;
+/* ...styles from the previous example  */
+
+.enter2 {
+  animation-duration: 500ms;
+  animation-name: enter-top-right;
 }
 
-.base > * {
-  width: 100%;
-  text-align: center;
-  font-size: 3rem;
-  /* in Firefox elements glitch a bit when
-  this initial transform is not applied  */
-  transform: translateX(0);
-}
-
-.base .enter {
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
-  animation-name: enter-right-left;
-}
-
-.base .exit {
+.exit2 {
   position: absolute;
   top: 0;
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
-  animation-name: exit-right-left;
+  animation-duration: 500ms;
+  animation-name: exit-top-left;
 }
 
-@keyframes enter-right-left {
+@keyframes enter-top-right {
   from {
-    opacity: 0;
-    transform: translateX(var(--x));
+    transform: translate(100px, -100px);
   }
   to {
     transform: translateX(0px);
-    opacity: 1;
   }
 }
 
-@keyframes exit-right-left {
+@keyframes exit-top-left {
   from {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translate(0);
   }
   to {
-    transform: translateX(var(--x-n));
-    opacity: 0;
+    transform: translate(-100px, -100px);
+  }
+}
+
+.enter2-reverse {
+  animation-duration: 500ms;
+  animation-name: enter-bottom-left;
+}
+
+.exit2-reverse {
+  position: absolute;
+  top: 0;
+  animation-duration: 500ms;
+  animation-name: exit-bottom-right;
+}
+
+@keyframes enter-bottom-left {
+  from {
+    transform: translate(-100px, 100px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes exit-bottom-right {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(100px, 100px);
   }
 }

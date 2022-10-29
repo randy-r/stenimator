@@ -4,12 +4,11 @@ const typescript = require('highlight.js/lib/languages/typescript');
 const html = require('highlight.js/lib/languages/xml');
 const css = require('highlight.js/lib/languages/css');
 const jsx = require('highlight.js/lib/languages/javascript');
+
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('html', html);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('jsx', jsx);
-
-// const highlightedCode = hljs.highlight('const x: number = 1;', { language: 'typescript' }).value;
 
 async function main() {
   const inputDirs = await fs.readdir(__dirname + '/input');

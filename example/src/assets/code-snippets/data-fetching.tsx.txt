@@ -1,17 +1,9 @@
-<span class="hljs-tag">&lt;<span class="hljs-name">Stenimator</span> <span class="hljs-attr">criteria</span>=<span class="hljs-string">{Router.activePath}</span>
-  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;base&quot;</span> <span class="hljs-attr">enter</span>=<span class="hljs-string">&quot;enter&quot;</span> <span class="hljs-attr">exit</span>=<span class="hljs-string">&quot;exit&quot;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Stenimator</span>
+  <span class="hljs-attr">criteria</span>=<span class="hljs-string">{loading}</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;base-data&quot;</span>
+  <span class="hljs-attr">enter</span>=<span class="hljs-string">&quot;enter-top-rotate&quot;</span>
+  <span class="hljs-attr">exit</span>=<span class="hljs-string">&quot;exit-bottom-rotate&quot;</span>
 &gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">RouterSwitch</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/standard/a&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/standard/a&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard/a&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard/b&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;/standard/b&quot;</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/standard/c&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;/standard/c&quot;</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">RouterSwitch</span>&gt;</span>
+  {loading === true &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;spinner&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;spinner&quot;</span> /&gt;</span>}
+  {loading === false &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;data&quot;</span>&gt;</span> {data.name} <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>}
 <span class="hljs-tag">&lt;/<span class="hljs-name">Stenimator</span>&gt;</span>

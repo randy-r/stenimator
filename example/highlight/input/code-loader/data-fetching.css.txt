@@ -1,54 +1,50 @@
-.base {
+.base-data {
   display: block;
-  --x: 100%;
-  --x-n: calc(0px - 100%);
-  --duration: 500ms;
-  --timing: ease-in-out;
   position: relative;
   overflow: hidden;
+  perspective: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.base > * {
-  width: 100%;
+.base-data > * {
+  display: block;
   text-align: center;
-  font-size: 3rem;
-  /* in Firefox elements glitch a bit when
-  this initial transform is not applied  */
-  transform: translateX(0);
+  transform: translate(0);
+  height: 71px;
 }
 
-.base .enter {
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
-  animation-name: enter-right-left;
+.enter-top-rotate {
+  transform-origin: center center -36px;
+  animation-name: enter-top-rotate;
+  animation-duration: 300ms;
+  transform-box: content-box;
 }
 
-.base .exit {
+@keyframes enter-top-rotate {
+  from {
+    transform: rotate3d(1, 0, 0, 60deg);
+  }
+  to {
+    transform: rotate3d(1, 0, 0, 0deg);
+  }
+}
+
+.exit-bottom-rotate {
   position: absolute;
   top: 0;
-  animation-duration: var(--duration);
-  animation-timing-function: var(--timing);
-  animation-name: exit-right-left;
+  transform-origin: center center -36px;
+  animation-name: exit-bottom-rotate;
+  animation-duration: 300ms;
+  transform-box: content-box;
 }
 
-@keyframes enter-right-left {
+@keyframes exit-bottom-rotate {
   from {
-    opacity: 0;
-    transform: translateX(var(--x));
+    transform: rotate3d(1, 0, 0, 0deg);
   }
   to {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes exit-right-left {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(var(--x-n));
-    opacity: 0;
+    transform: rotate3d(1, 0, 0, -60deg);
   }
 }

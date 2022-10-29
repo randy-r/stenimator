@@ -1,10 +1,5 @@
 /* Stenimator styles */
 
-.base {
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
 
 .show-code-base {
   display: block;
@@ -15,6 +10,12 @@
 
 .show-code-base > * {
   width: 100%;
+}
+
+.base {
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .base > * {

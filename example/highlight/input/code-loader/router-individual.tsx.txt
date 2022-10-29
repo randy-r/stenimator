@@ -1,17 +1,32 @@
-<Stenimator criteria={Router.activePath}
-  class="base" enter="enter" exit="exit"
+<Stenimator
+  criteria={Router.activePath}
+  class="base"
+  enter="enter"
+  exit="exit"
+  enterReverse="enter-reverse"
+  exitReverse="exit-reverse"
 >
-  <RouterSwitch>
-    <Route path="/" to="/standard/a" />
-    <Route path="/standard" to="/standard/a" />
-    <Route path="/standard/a">
-      <div>A</div>
+  <Switch>
+    <Route path="/individual/a">
+      <div key="a" data-order={1}>
+        A
+      </div>
     </Route>
-    <Route path="/standard/b">
-      <div key="/standard/b">B</div>
+    <Route path="/individual/b">
+      <StenimatorItem
+        order={2}
+        enter="enter2"
+        exit="exit2"
+        enterReverse="enter2-reverse"
+        exitReverse="exit2-reverse"
+      >
+        <div key="b">B</div>
+      </StenimatorItem>
     </Route>
-    <Route path="/standard/c">
-      <div key="/standard/c">C</div>
+    <Route path="/individual/c">
+      <div key="c" data-order={3}>
+        C
+      </div>
     </Route>
-  </RouterSwitch>
+  </Switch>
 </Stenimator>
