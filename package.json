@@ -12,7 +12,7 @@
   "unpkg": "dist/stenimator/stenimator.esm.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/randy-r/stedux.git"
+    "url": "git+https://github.com/randy-r/steminator.git"
   },
   "files": [
     "dist/",
@@ -46,7 +46,7 @@
   "author": "randy-r",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/randy-r/stedux/issues"
+    "url": "https://github.com/randy-r/steminator/issues"
   },
-  "homepage": "https://randy-r.github.io/stedux/"
+  "homepage": "https://randy-r.github.io/steminator/"
 }
