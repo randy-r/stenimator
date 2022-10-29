@@ -16,6 +16,10 @@ body {
 }
 
 :root {
+  color-scheme: light dark;
+}
+
+:root {
   --cyan9: rgb(11, 114, 133);
   /* --old: rgba(152, 206, 168, 1); */
   --bg-light: #fff;

@@ -1,0 +1,16 @@
+.scheme-choice {
+  border: 0;
+  display: none;
+}
+
+.scheme-choice input {
+  display: none;
+}
+
+.scheme-choice label {
+  margin: 0 0.6rem 0;
+}
+
+.scheme-choice input:checked + label {
+  display: inline;
+}
