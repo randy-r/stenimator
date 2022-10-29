@@ -6,11 +6,11 @@
       <div>A</div>
     </Route>
     <Route path="/standard/b">
-      <div key="/standard/b">B</div>
+      <div key="b">B</div>
     </Route>
     <Route path="/standard/c">
-      <div key="/standard/c">C</div>
+      <div key="c">C</div>
     </Route>
-    <Route path="/" to="/standard/a" />
+    <Route path="/" to="a" />
   </Switch>
 </Stenimator>

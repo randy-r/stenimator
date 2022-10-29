@@ -9,13 +9,13 @@ export const config: Config = {
   taskQueue: 'async',
   tsconfig: 'tsconfig.json',
   minifyJs: minify,
-  minifyCss: minify,
+  minifyCss: false,
   outputTargets: [
     {
       type: 'www',
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      baseUrl: 'https://myapp.local',
+      baseUrl: 'https://randy-r.github.io/stenimator',
       prerenderConfig: './prerender.config.ts',
     },
   ],

@@ -1,5 +1,6 @@
 import { Component, Host, h, State } from '@stencil/core';
 import { Stenimator, StenimatorItem } from 'stenimator';
+import { basePath } from '../../utils/basepath';
 import { CodeSection } from '../Code/CodeSection';
 import { Router, Route, Switch, href } from '../router';
 
@@ -15,19 +16,28 @@ export class RouterIndividual {
 
   render() {
     let activePath = Router.activePath;
-    this.lastAp = activePath.startsWith('/individual') ? activePath : this.lastAp;
+    this.lastAp = activePath.startsWith(basePath + '/individual') ? activePath : this.lastAp;
 
     return (
       <Host>
         <h2>Individual Page Transitions</h2>
         <nav>
-          <a {...href('/individual/a', Router)} class={{ active: activePath === '/individual/a' }}>
+          <a
+            {...href(basePath + '/individual/a', Router)}
+            class={{ active: activePath === basePath + '/individual/a' }}
+          >
             /a
           </a>
-          <a {...href('/individual/b', Router)} class={{ active: activePath === '/individual/b' }}>
+          <a
+            {...href(basePath + '/individual/b', Router)}
+            class={{ active: activePath === basePath + '/individual/b' }}
+          >
             /b
           </a>
-          <a {...href('/individual/c', Router)} class={{ active: activePath === '/individual/c' }}>
+          <a
+            {...href(basePath + '/individual/c', Router)}
+            class={{ active: activePath === basePath + '/individual/c' }}
+          >
             /c
           </a>
         </nav>
@@ -41,14 +51,14 @@ export class RouterIndividual {
             exitReverse="exit-reverse"
           >
             <Switch>
-              <Route path="/" to="/individual/c" />
-              <Route path="/individual" to="/individual/c" />
-              <Route path="/individual/a">
+              <Route path={basePath + '/'} to={basePath + '/individual/c'} />
+              <Route path={basePath + '/individual'} to={basePath + '/individual/c'} />
+              <Route path={basePath + '/individual/a'}>
                 <div key="a" data-order={1}>
                   A
                 </div>
               </Route>
-              <Route path="/individual/b">
+              <Route path={basePath + '/individual/b'}>
                 <StenimatorItem
                   order={2}
                   enter="enter2"
@@ -59,7 +69,7 @@ export class RouterIndividual {
                   <div key="b">B</div>
                 </StenimatorItem>
               </Route>
-              <Route path="/individual/c">
+              <Route path={basePath + '/individual/c'}>
                 <div key="c" data-order={3}>
                   C
                 </div>

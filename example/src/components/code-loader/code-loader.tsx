@@ -1,4 +1,5 @@
 import { Component, Host, h, State, Prop, Build } from '@stencil/core';
+import { basePath } from '../../utils/basepath';
 import { Options } from './types';
 
 const cacheMap = new Map<string, string>();
@@ -35,8 +36,8 @@ export class CodeLoader {
       if (Build.isBrowser) {
         const { type } = this;
         const [tsxTxt, cssTxt] = await Promise.all([
-          fetchTxt(`/assets/code-snippets/${type}.tsx.txt`, { cache: 'force-cache' }),
-          fetchTxt(`/assets/code-snippets/${type}.css.txt`, { cache: 'force-cache' }),
+          fetchTxt(`${basePath}/assets/code-snippets/${type}.tsx.txt`, { cache: 'force-cache' }),
+          fetchTxt(`${basePath}/assets/code-snippets/${type}.css.txt`, { cache: 'force-cache' }),
         ]);
         this.tsxContent = tsxTxt;
         this.cssContent = cssTxt;
