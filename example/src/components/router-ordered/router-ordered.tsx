@@ -22,13 +22,13 @@ export class RouterOrdered {
         <h2>Ordered Page Transitions</h2>
         <nav>
           <a {...href('/ordered/a', Router)} class={{ active: activePath === '/ordered/a' }}>
-            a
+            /a
           </a>
           <a {...href('/ordered/b', Router)} class={{ active: activePath === '/ordered/b' }}>
-            b
+            /b
           </a>
           <a {...href('/ordered/c', Router)} class={{ active: activePath === '/ordered/c' }}>
-            c
+            /c
           </a>
         </nav>
         <section>
@@ -41,8 +41,8 @@ export class RouterOrdered {
             exitReverse="exit-reverse"
           >
             <Switch>
-              <Route path="/" to="/ordered/a" />
-              <Route path="/ordered" to="/ordered/a" />
+              <Route path="/" to="/ordered/b" />
+              <Route path="/ordered" to="/ordered/b" />
               <Route path="/ordered/a">
                 <div key="a" data-order={1}>
                   A
@@ -59,7 +59,7 @@ export class RouterOrdered {
                 </div>
               </Route>
               <Route path={/./}>
-                <div key="fallback">A</div>
+                <div key="fallback">B</div>
               </Route>
             </Switch>
           </Stenimator>

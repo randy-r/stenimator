@@ -22,13 +22,13 @@ export class RouterStandard {
         <h2>Page Transitions</h2>
         <nav>
           <a {...href('/standard/a', Router)} class={{ active: activePath === '/standard/a' }}>
-            a
+            /a
           </a>
           <a {...href('/standard/b', Router)} class={{ active: activePath === '/standard/b' }}>
-            b
+            /b
           </a>
           <a {...href('/standard/c', Router)} class={{ active: activePath === '/standard/c' }}>
-            c
+            /c
           </a>
         </nav>
         <section>

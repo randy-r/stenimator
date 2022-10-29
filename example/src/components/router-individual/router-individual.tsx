@@ -22,13 +22,13 @@ export class RouterIndividual {
         <h2>Individual Page Transitions</h2>
         <nav>
           <a {...href('/individual/a', Router)} class={{ active: activePath === '/individual/a' }}>
-            a
+            /a
           </a>
           <a {...href('/individual/b', Router)} class={{ active: activePath === '/individual/b' }}>
-            b
+            /b
           </a>
           <a {...href('/individual/c', Router)} class={{ active: activePath === '/individual/c' }}>
-            c
+            /c
           </a>
         </nav>
         <section>
@@ -41,8 +41,8 @@ export class RouterIndividual {
             exitReverse="exit-reverse"
           >
             <Switch>
-              <Route path="/" to="/individual/a" />
-              <Route path="/individual" to="/individual/a" />
+              <Route path="/" to="/individual/c" />
+              <Route path="/individual" to="/individual/c" />
               <Route path="/individual/a">
                 <div key="a" data-order={1}>
                   A
@@ -65,7 +65,7 @@ export class RouterIndividual {
                 </div>
               </Route>
               <Route path={/./}>
-                <div key="fallback">A</div>
+                <div key="fallback">C</div>
               </Route>
             </Switch>
           </Stenimator>
