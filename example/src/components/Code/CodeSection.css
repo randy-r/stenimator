@@ -3,7 +3,9 @@
 .code-trigger {
   padding-left: 0;
   background-color: transparent;
+  border: none;
   margin: 0;
+  font-weight: normal;
 }
 
 .code-trigger > span:first-child {

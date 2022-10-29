@@ -1,0 +1,39 @@
+.btn-like,
+a,
+button {
+  /* background-color: transparent; */
+  background-color: var(--surface1);
+  border: 2px solid var(--surface1);
+  /* border: 2px solid var(--brand);; */
+  border-radius: var(--radius-2);
+  color: var(--text1);
+  font-weight: var(--font-weight-7);
+   padding-block: 0.75ch;
+  padding-inline: 1.75ch;
+  display: inline-flex;  
+  line-height: normal;
+  font-size: 1rem;
+}
+
+a:visited,
+.btn-like:visited {
+  color: var(--text1);
+}
+
+.btn-like:hover,
+a:hover,
+button:hover {
+  /* background-color: aquamarine; */
+  /* background-color: aquamarine; */
+  color: var(--brand);
+  cursor: pointer;
+}
+
+a.active,
+.btn-like.active {
+  /* TODO define a surface for this */
+  background-color: var(--surface1);
+
+  color: var(--brand);
+  font-weight: var(--font-weight-6);
+}
