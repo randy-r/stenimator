@@ -3,6 +3,7 @@
 @import './github-hl.css';
 @import './animations.css';
 @import '../Spinner/Spinner.css';
+@import '../Code/CodeSection.css';
 
 /* Map to semantics */
 :host {

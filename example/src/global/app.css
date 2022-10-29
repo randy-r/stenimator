@@ -30,11 +30,23 @@ body {
   --effect: var(--effect-light);
 }
 
+.bg-effect {
+  filter: contrast(310%) brightness(100%);
+  background: radial-gradient(circle at -50% -50%, rgba(152, 206, 168, 1), rgba(0, 0, 0, 0)),
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.21' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: var(--bg-dark);
     --brand: var(--brand-dark);
     --effect: var(--effect-dark);
+  }
+  
+  .bg-effect {
+    filter: contrast(200%) brightness(40%);
+    filter: contrast(200%) brightness(20%);
+    background: radial-gradient(circle at -50% -50%, rgb(6, 49, 43), rgba(0, 0, 0, 0)), url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.21' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 }
 
@@ -48,9 +60,6 @@ body {
 html {
   overflow-y: scroll;
   /* filter: var(--noise-filter-3); */
-}
-
-body {
 }
 
 .bg-effect {
@@ -88,6 +97,10 @@ body {
 	url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.51' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
    */
 
+  /* background: radial-gradient(circle at -50% -50%, rgba(152, 206, 168, 1), rgba(0, 0, 0, 0)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.21' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
+
+ 
   /* stack grain with a gradient */
   /* background-image: var(--gradient-3), var(--noise-3); */
   /* force colors and noise to collide */

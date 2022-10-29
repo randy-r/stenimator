@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from '@stencil/core';
+import { Fragment, FunctionalComponent, h } from '@stencil/core';
 import { Stenimator } from 'stenimator';
 
 export type CodeSectionProps = {
@@ -9,15 +9,22 @@ export type CodeSectionProps = {
 
 export const CodeSection: FunctionalComponent<CodeSectionProps> = props => {
   const { onClick, show, type } = props;
+  const handleClick = (e: MouseEvent) => {
+    e.preventDefault();
+    onClick();
+  };
+
   return (
-    <div>
-      <span role="button" onClick={onClick} class="btn-like" tabIndex={0}>
-        {!show ? 'code' : 'x'}
-      </span>
-      <Stenimator criteria={show} class="show-code-base" enter="enter-top" exit="exit-top">
-        {show && <code-loader class="code-shower" />}
-        {!show && <span />}
-      </Stenimator>
-    </div>
+    <Fragment>
+      <section>
+        <button onClick={handleClick} class="code-trigger">
+          <span>{show ? '▽' : '▷'}</span> Code
+        </button>
+        <Stenimator criteria={show} class="show-code-base" enter="enter-top" exit="exit-top">
+          {show && <code-loader class="code-shower" />}
+          {!show && <span />}
+        </Stenimator>
+      </section>
+    </Fragment>
   );
 };

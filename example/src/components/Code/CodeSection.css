@@ -1,0 +1,11 @@
+
+
+.code-trigger {
+  padding-left: 0;
+  background-color: transparent;
+  margin: 0;
+}
+
+.code-trigger > span:first-child {
+  margin-top: -3px;
+}
