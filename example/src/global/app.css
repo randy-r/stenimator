@@ -16,6 +16,8 @@ body {
 }
 
 :root {
+  --cyan9 : rgb(11, 114, 133);
+  /* --old: rgba(152, 206, 168, 1); */
   --bg-light: #fff;
   --brand-light: var(--cyan-9);
   --effect-light: rgba(137, 160, 144, 1);
@@ -36,7 +38,10 @@ body {
 
 .bg-effect {
   filter: contrast(310%) brightness(100%);
-  background: radial-gradient(circle at -50% -50%, rgba(152, 206, 168, 1), rgba(0, 0, 0, 0)),
+  filter: contrast(500%) brightness(100%);
+  filter: contrast(500%) brightness(120%);
+
+  background: radial-gradient(circle at -50% -50%, rgb(11, 114, 133, 0.3), rgba(0, 0, 0, 0)),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.21' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
