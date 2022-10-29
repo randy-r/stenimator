@@ -29,7 +29,7 @@ body {
   --surface1-light: rgba(255, 255, 255, 1);
 
   --bg-dark: #var(--gray-9);
-  
+
   --brand-dark: var(--cyan-5); /* #22b8cf */
   --brand2-dark: hsl(188deg 100% 88%);
   --effect-dark: rgb(33, 52, 39);
@@ -45,11 +45,13 @@ body {
 }
 
 .bg-effect {
-  filter: contrast(310%) brightness(100%);
-  filter: contrast(500%) brightness(100%);
   filter: contrast(500%) brightness(120%);
-
   background: radial-gradient(circle at -50% -50%, rgb(11, 114, 133, 0.3), rgba(0, 0, 0, 0)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.21' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
+  filter: contrast(300%) brightness(120%);
+
+  background: radial-gradient(circle at -50% -50%, rgb(11, 114, 133, 0.2), rgba(0, 0, 0, 0)),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4.21' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 

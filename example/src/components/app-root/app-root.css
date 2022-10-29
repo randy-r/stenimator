@@ -108,12 +108,10 @@
 }
 
 .fill-out {
-  fill: var(--text1);
+  fill: var(--brand);
 }
 
-
 .external-links {
-  /* color: var(--p1-clr); */
   font-size: 1rem;
   margin-left: auto;
 }
@@ -129,5 +127,5 @@
 }
 
 .external-links a:hover .fill-out {
-  fill: var(--brand);
+  fill: var(--text1);
 }
