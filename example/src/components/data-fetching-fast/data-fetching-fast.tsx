@@ -21,8 +21,8 @@ const fetchData = async (id: number) => {
 export class DataFetchingFast {
   @State() showCode: boolean = false;
   @State() loading: boolean | null = false;
-  @State() data: { id: number; name: string } | null = dataList[0];
-  id: number = 2;
+  @State() data: { id: number; name: string } | null = dataList[1];
+  id: number = 1;
 
   handleClick = () => {
     this.loading = true;

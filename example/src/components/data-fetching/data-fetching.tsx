@@ -10,7 +10,7 @@ const dataList = [
 ];
 
 const fetchData = async (id: number) => {
-  await delay(50 + Math.ceil(Math.random() * 50));
+  await delay(500 + Math.ceil(Math.random() * 100));
   return dataList.find(d => d.id === id);
 };
 
