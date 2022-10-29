@@ -16,15 +16,18 @@ body {
 }
 
 :root {
-  --cyan9 : rgb(11, 114, 133);
+  --cyan9: rgb(11, 114, 133);
   /* --old: rgba(152, 206, 168, 1); */
   --bg-light: #fff;
   --brand-light: var(--cyan-9);
+  --brand2-light: hsl(189deg 100% 17%);
   --effect-light: rgba(137, 160, 144, 1);
   --surface1-light: rgba(255, 255, 255, 1);
 
   --bg-dark: #var(--gray-9);
-  --brand-dark: var(--cyan-5);
+  
+  --brand-dark: var(--cyan-5); /* #22b8cf */
+  --brand2-dark: hsl(188deg 100% 88%);
   --effect-dark: rgb(33, 52, 39);
   --surface1-dark: var(--gray-9);
 }
@@ -32,6 +35,7 @@ body {
 :root {
   --bg: var(--bg-light);
   --brand: var(--brand-light);
+  --brand2: var(--brand2-light);
   --effect: var(--effect-light);
   --surface1: var(--surface1-light);
 }
@@ -49,6 +53,7 @@ body {
   :root {
     --bg: var(--bg-dark);
     --brand: var(--brand-dark);
+    --brand2: var(--brand2-dark);
     --effect: var(--effect-dark);
     --surface1: var(--surface1-dark);
   }

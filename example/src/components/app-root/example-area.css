@@ -6,16 +6,9 @@ nav {
 }
 
 nav > a {
-  /* padding-inline: var(--size-5); */
-  /* box-shadow: var(--shadow-3); */
-  /* font-size: var(--font-size-2); */
   text-decoration: none;
   text-decoration-color: var(--text1);
-  /* line-height: var(--font-lineheight-3); */
-  /* min-height: 30px; */
-  /* display: inline-block; */
 }
-
 
 .spinner {
   display: flex;
@@ -32,3 +25,9 @@ nav > a {
   display: flex;
   justify-content: center;
 }
+
+.base-data,
+.base {
+  color: var(--brand2);
+}
+

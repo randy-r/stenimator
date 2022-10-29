@@ -1,5 +1,5 @@
 .btn-like,
-a,
+.content a,
 button {
   /* background-color: transparent; */
   background-color: var(--surface1);
@@ -8,20 +8,20 @@ button {
   border-radius: var(--radius-2);
   color: var(--text1);
   font-weight: var(--font-weight-7);
-   padding-block: 0.75ch;
+  padding-block: 0.75ch;
   padding-inline: 1.75ch;
-  display: inline-flex;  
+  display: inline-flex;
   line-height: normal;
   font-size: 1rem;
 }
 
-a:visited,
+.content a:visited,
 .btn-like:visited {
   color: var(--text1);
 }
 
 .btn-like:hover,
-a:hover,
+.content a:hover,
 button:hover {
   /* background-color: aquamarine; */
   /* background-color: aquamarine; */
@@ -29,7 +29,7 @@ button:hover {
   cursor: pointer;
 }
 
-a.active,
+.content a.active,
 .btn-like.active {
   /* TODO define a surface for this */
   background-color: var(--surface1);

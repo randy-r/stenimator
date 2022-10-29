@@ -80,6 +80,7 @@
   padding-inline: var(--size-4);
   display: inline-block;
   display: flex;
+  align-items: center;
   background-color: var(--surface1);
 }
 
@@ -99,4 +100,33 @@
 
 .code-shower {
   margin: 0 auto;
+}
+
+.fill-in {
+  fill: var(--surface1);
+}
+
+.fill-out {
+  fill: var(--text1);
+}
+
+
+.external-links {
+  /* color: var(--p1-clr); */
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.external-links a {
+  margin: 0 0.6rem 0;
+}
+
+.external-links svg {
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.external-links a:hover .fill-out {
+  fill: var(--brand);
 }
