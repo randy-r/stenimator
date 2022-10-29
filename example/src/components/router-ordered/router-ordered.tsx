@@ -65,7 +65,7 @@ export class RouterOrdered {
           </Stenimator>
 
           <CodeSection
-            type="ordered"
+            type="router-ordered"
             onClick={() => (this.showCode = !this.showCode)}
             show={this.showCode}
           />

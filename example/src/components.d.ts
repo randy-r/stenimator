@@ -5,10 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Options } from "./components/code-loader/types";
 export namespace Components {
     interface AppRoot {
     }
     interface CodeLoader {
+        "type": Options;
     }
     interface DataFetching {
     }
@@ -87,6 +89,7 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface CodeLoader {
+        "type"?: Options;
     }
     interface DataFetching {
     }

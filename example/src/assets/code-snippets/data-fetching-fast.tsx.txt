@@ -1,0 +1,1 @@
+const fast = &#x27;tsx&#x27;;

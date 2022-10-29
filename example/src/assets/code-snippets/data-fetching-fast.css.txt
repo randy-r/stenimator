@@ -1,0 +1,3 @@
+x {
+  fast: <span class="hljs-string">&#x27;&#x27;</span>
+}

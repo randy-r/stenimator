@@ -70,7 +70,7 @@ export class RouterIndividual {
             </Switch>
           </Stenimator>
           <CodeSection
-            type="individual"
+            type="router-individual"
             onClick={() => (this.showCode = !this.showCode)}
             show={this.showCode}
           />

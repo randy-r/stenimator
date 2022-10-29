@@ -20,13 +20,13 @@ async function main() {
         encoding: 'utf8',
       });
       let options = { language: 'invalid' };
-      if (fName === 'css.txt') {
+      if (fName.endsWith('css.txt')) {
         options.language = 'css';
-      } else if (fName === 'tsx.txt') {
+      } else if (fName.endsWith('tsx.txt')) {
         options.language = 'html';
       }
-      const cssHl = hljs.highlight(content, options).value;
-      await fs.writeFile(__dirname + `/../src/components/${name}/${fName}`, cssHl);
+      const highlighted = hljs.highlight(content, options).value;
+      await fs.writeFile(__dirname + `/../src/assets/code-snippets//${fName}`, highlighted);
     }
   }
 }

@@ -1,10 +1,11 @@
 import { Fragment, FunctionalComponent, h } from '@stencil/core';
 import { Stenimator } from 'stenimator';
+import { Options } from '../code-loader/types';
 
 export type CodeSectionProps = {
   onClick: () => void;
   show: boolean;
-  type: 'ordered' | 'individual' | 'standard' | 'data-fetching';
+  type: Options;
 };
 
 export const CodeSection: FunctionalComponent<CodeSectionProps> = props => {
@@ -21,7 +22,7 @@ export const CodeSection: FunctionalComponent<CodeSectionProps> = props => {
           <span>{show ? '▽' : '▷'}</span> Code
         </button>
         <Stenimator criteria={show} class="show-code-base" enter="enter-top" exit="exit-top">
-          {show && <code-loader class="code-shower" />}
+          {show && <code-loader type={type} class="code-shower" />}
           {!show && <span />}
         </Stenimator>
       </section>

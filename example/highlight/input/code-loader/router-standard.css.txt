@@ -1,0 +1,54 @@
+.base {
+  display: block;
+  --x: 100%;
+  --x-n: calc(0px - 100%);
+  --duration: 500ms;
+  --timing: ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.base > * {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  /* in Firefox elements glitch a bit when
+  this initial transform is not applied  */
+  transform: translateX(0);
+}
+
+.base .enter {
+  animation-duration: var(--duration);
+  animation-timing-function: var(--timing);
+  animation-name: enter-right-left;
+}
+
+.base .exit {
+  position: absolute;
+  top: 0;
+  animation-duration: var(--duration);
+  animation-timing-function: var(--timing);
+  animation-name: exit-right-left;
+}
+
+@keyframes enter-right-left {
+  from {
+    opacity: 0;
+    transform: translateX(var(--x));
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-right-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--x-n));
+    opacity: 0;
+  }
+}

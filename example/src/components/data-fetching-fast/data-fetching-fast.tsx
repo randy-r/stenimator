@@ -50,7 +50,7 @@ export class DataFetchingFast {
           <span key={data.id}>{data.name}</span>
         </Stenimator>
         <CodeSection
-          type="data-fetching"
+          type="data-fetching-fast"
           onClick={() => (this.showCode = !this.showCode)}
           show={this.showCode}
         />

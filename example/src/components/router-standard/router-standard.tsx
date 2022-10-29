@@ -52,7 +52,7 @@ export class RouterStandard {
           </Stenimator>
 
           <CodeSection
-            type="standard"
+            type="router-standard"
             onClick={() => (this.showCode = !this.showCode)}
             show={this.showCode}
           />
