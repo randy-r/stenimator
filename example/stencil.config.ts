@@ -4,6 +4,10 @@ import { Config } from '@stencil/core';
 
 const minify = true;
 export const config: Config = {
+  devServer: {
+    openBrowser: false,
+    // basePath: '/'
+  },
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
