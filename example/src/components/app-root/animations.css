@@ -222,7 +222,7 @@
   position: relative;
   overflow: hidden;
   perspective: 200px;
-  margin-block: var(--size-5);
+  margin-block-start: var(--size-5);
 
   display: flex;
   align-items: center;
